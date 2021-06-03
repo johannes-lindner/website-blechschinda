@@ -20,17 +20,19 @@ body {
       font-size: 17vw;
     }
 	}
+@media screen and (orientation: landscape)
+{
+  .heading{
+    font-size: 60pt;
+  }
+}
 
-	@media screen and (orientation: landscape)
-	{
-    .heading{
-      font-size: 60pt;
-    }
-	}
-
+.nav-item-custom{
+  margin: 0px 4vw 0px 4vw;
+  
+}
 
 .menu {
-  
   font-size: 20pt;
   font: "Acumin Variable Concept";
   background-color: #083861;
@@ -51,7 +53,6 @@ body {
   border: 1px solid #FFE080 !important;
   color: #FFE080 !important;
 }
-
 
 .nav-link {
   color: #FFE080 !important;
