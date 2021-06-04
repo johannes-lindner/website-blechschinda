@@ -1,4 +1,4 @@
-
+// -> To-Do: read from file
 var textDeutsch = '<p id="textParagraph">	Die Wurzeln unserer Kapelle liegen in Niederlindhart. Das dort alljährlich stattfindende Stadlfest wurde von den Bläsern der Enzianschützen seit dem Jahr 2015 musikalisch umrahmt. Aus dieser Formation entwickelte sich Schritt für Schritt die Kapelle „Blechschinda“, mit der wir seit Anfang 2019 in unserer Blechbesetzung unterwegs sind. <br><br>' +
 				"Um unsere Truppe optisch wie auch musikalisch aufzufrischen, entzücken uns seit Sommer 2019 unsere beiden „Holzhexen“ an den Klarinetten." +
 				"Seither begleiten wir Veranstaltungen jeglicher Art mit bayerisch-böhmischer Blasmusik. So erfreuen wir das Gemüt vieler Gäste unter anderem auf Geburtstagen, Festumzügen, Vereins- und Volksfesten oder Hochzeiten. Ob Poolparty oder Scheidungsfeier – wir verleihen jedem Fest eine besondere Note. <br>" +
@@ -18,11 +18,38 @@ var textBayrisch = "<p>Ogfangt hod‘s mit unsara Kapelln z‘Lindad. Do hama de
                 "</p>";
 
 // =============================================================================
-var spr = document.getElementById("sprache");
-var link = spr.children[0];
-var isBayrisch = false;
-link.onclick = function (){
-    if(isBayrisch==true)
+// Login form (remove block later)
+
+var isCorrect = false;
+var body = document.getElementsByTagName("body")[0];
+var initBodyHTML = body.innerHTML;
+
+var login = '<div class="container" style="display: flex; justify-content: center;margin-top: 100px;>'+
+'<label for="psw"><b>Password</b></label>'+
+'<input id="i" type="password" placeholder="Enter Password" name="psw" style="margin: 0px 10px 0px 10px;" required>'  +
+'<button id="b" type="submit">Login</button>'+
+'<label></div>';
+body.innerHTML = login;
+
+var button = document.getElementById("b");
+var pw = document.getElementById("i");
+
+button.onclick = function(){
+    var reqPW = 'suco';
+    if (pw.value == reqPW){
+        console.log("your logged in")
+        body.innerHTML = initBodyHTML;
+        activateLangSwitch()
+    }
+}
+
+// ============================================================================
+function activateLangSwitch(){ // function only for login
+    var spr = document.getElementById("sprache");
+    var link = spr.children[0];
+    var isBayrisch = false;
+    link.onclick = function (){
+    if(isBayrisch)
     {
         document.getElementById("textParagraph").innerHTML = textDeutsch;
         document.getElementById("aboutText").textContent = "Über uns";
@@ -36,3 +63,10 @@ link.onclick = function (){
         isBayrisch=true;
     }
 } 
+
+}
+
+
+
+
+
