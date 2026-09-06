@@ -1,0 +1,13 @@
+# Duplicate of /galerie/ produced by the original static export
+/Galerie.html            /galerie/              301
+
+# Leftover WordPress entry points, still probed by bots and old bookmarks
+/wp-admin                /                      301
+/wp-admin/*              /                      301
+/wp-login.php            /                      301
+/xmlrpc.php              /                      301
+/feed                    /                      301
+/feed/*                  /                      301
+
+# The contact form was replaced by a mail contact in the Kontakt section
+/kontakt                 /#Kontakt              301
